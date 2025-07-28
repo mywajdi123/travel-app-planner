@@ -609,6 +609,10 @@
     position: relative;
   }
 
+  .static {
+    position: static;
+  }
+
   .col-start-2 {
     grid-column-start: 2;
   }
@@ -704,6 +708,10 @@
     display: block;
   }
 
+  .contents {
+    display: contents;
+  }
+
   .flex {
     display: flex;
   }
@@ -714,6 +722,10 @@
 
   .inline-flex {
     display: inline-flex;
+  }
+
+  .table {
+    display: table;
   }
 
   .size-9 {
@@ -1224,6 +1236,10 @@
     color: var(--color-white);
   }
 
+  .lowercase {
+    text-transform: lowercase;
+  }
+
   .underline-offset-4 {
     text-underline-offset: 4px;
   }
@@ -1261,6 +1277,10 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+
+  .filter {
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
   .transition {
