@@ -4,9 +4,17 @@ import { auth } from "@/auth";
 import { prisma } from "../prisma";
 import { redirect } from "next/navigation";
 
+type SessionUser = {
+  id: string;
+  name?: string | null;
+  email?: string | null;
+  image?: string | null;
+};
+
 export async function createTrip(formData: FormData) {
   const session = await auth();
-  if (!session || !session.user?.id) {
+  const user = session?.user as SessionUser | undefined;
+  if (!session || !user?.id) {
     throw new Error("Not authenticated.");
   }
 
@@ -22,7 +30,7 @@ export async function createTrip(formData: FormData) {
 
   const startDate = new Date(startDateStr);
   const endDate = new Date(endDateStr);
-
+      userId: user.id,
   await prisma.trip.create({
     data: {
       title,
